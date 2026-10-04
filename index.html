@@ -301,6 +301,21 @@
       </div>
     `).join('');
 
+      function getClass(ipInt) {
+    const firstOctet = (ipInt >>> 24) & 255;
+    if (firstOctet < 128) return 'A';
+    if (firstOctet < 192) return 'B';
+    if (firstOctet < 224) return 'C';
+    if (firstOctet < 240) return 'D (Multicast)';
+    return 'E (Reserved)';
+  }
+
+  // Evaluate once on load with the default values
+  evaluate();
+</script>
+
+</body>
+
     document.getElementById('hostRange').textContent =
       usableHosts > 0 ? `${intToIp(firstHost)} — ${intToIp(lastHost)}` : 'None (point-to-point or single host)';
 
