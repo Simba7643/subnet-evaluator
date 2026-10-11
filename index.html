@@ -316,16 +316,6 @@
 
 </body>
 
-    document.getElementById('hostRange').textContent =
-      usableHosts > 0 ? `${intToIp(firstHost)} — ${intToIp(lastHost)}` : 'None (point-to-point or single host)';
-
-    document.getElementById('binaryRow').innerHTML =
-      `IP:      ${intToBinary(ipInt)}<br>` +
-      `Mask:    ${intToBinary(maskInt)}<br>` +
-      `Network: ${intToBinary(networkInt)}`;
-
-    resultsPanel.classList.add('show');
-  }
 
 
 </html>
